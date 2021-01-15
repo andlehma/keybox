@@ -18,8 +18,8 @@
 #define RT_PIN 10
 #define LT_PIN 14
 #define START_PIN 15
-#define SELECT_PIN 16
-#define HOME_PIN 18
+#define SELECT_PIN 18
+#define HOME_PIN 16
 
 #define UP 0
 #define DOWN 1
@@ -129,6 +129,9 @@ void buttonRead() {
   if (rb.update()) { buttonStatus[RB] = rb.fell(); }
   if (lt.update()) { buttonStatus[LT] = lt.fell(); }
   if (rt.update()) { buttonStatus[RT] = rt.fell(); }
+  if (start.update()) { buttonStatus[START] = start.fell(); }
+  if (select.update()) { buttonStatus[SELECT] = select.fell(); }
+  if (home.update()) { buttonStatus[HOME] = home.fell(); }
 }
 
 void processButtons() {
